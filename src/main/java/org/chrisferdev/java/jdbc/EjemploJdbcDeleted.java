@@ -10,7 +10,6 @@ import java.sql.SQLException;
 
 public class EjemploJdbcDeleted {
     public static void main(String[] args) {
-        try (Connection conn = ConexionBaseDatos.getInstance()){
 
             Repositorio<Producto> repositorio = new ProductoRepositorioImpl();
             System.out.println("=========== listar ===========");
@@ -24,9 +23,7 @@ public class EjemploJdbcDeleted {
             System.out.println("Producto eliminado con éxito");
             repositorio.listar().forEach(System.out::println);
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
     }
 }
 
